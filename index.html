@@ -22,7 +22,7 @@
       --radius: 22px;
       --radius2: 16px;
       --focus: 0 0 0 4px rgba(255, 111, 145, .25);
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji"
     }
 
     * {
@@ -34,8 +34,7 @@
       min-height: 100vh;
       font-family: var(--font);
       color: var(--ink);
-      background:
-        radial-gradient(1200px 700px at 20% 10%, var(--bg2), transparent 60%),
+      background: radial-gradient(1200px 700px at 20% 10%, var(--bg2), transparent 60%),
         radial-gradient(900px 600px at 90% 30%, #ffd7e8, transparent 55%),
         radial-gradient(900px 600px at 60% 90%, #fff3cc, transparent 60%),
         linear-gradient(160deg, var(--bg1), #fff 70%);
@@ -46,13 +45,12 @@
       overflow-x: hidden;
     }
 
-    /* subtle floating blobs */
     .blob {
       position: fixed;
       filter: blur(28px);
       opacity: .55;
       z-index: 0;
-      pointer-events: none;
+      pointer-events: none
     }
 
     .blob.b1 {
@@ -61,7 +59,7 @@
       left: -60px;
       top: -60px;
       background: radial-gradient(circle at 30% 30%, rgba(255, 111, 145, .55), transparent 55%);
-      animation: float1 8s ease-in-out infinite;
+      animation: float1 8s ease-in-out infinite
     }
 
     .blob.b2 {
@@ -70,7 +68,7 @@
       right: -90px;
       top: 40px;
       background: radial-gradient(circle at 45% 35%, rgba(255, 150, 113, .55), transparent 58%);
-      animation: float2 10s ease-in-out infinite;
+      animation: float2 10s ease-in-out infinite
     }
 
     .blob.b3 {
@@ -79,7 +77,7 @@
       left: 40%;
       bottom: -140px;
       background: radial-gradient(circle at 40% 40%, rgba(255, 215, 232, .65), transparent 60%);
-      animation: float3 12s ease-in-out infinite;
+      animation: float3 12s ease-in-out infinite
     }
 
     @keyframes float1 {
@@ -125,7 +123,7 @@
       gap: 18px;
       align-items: stretch;
       position: relative;
-      z-index: 1;
+      z-index: 1
     }
 
     .panel {
@@ -136,12 +134,12 @@
       position: relative;
       overflow: hidden;
       transform: translateY(0);
-      transition: transform .25s ease, box-shadow .25s ease;
+      transition: transform .25s ease, box-shadow .25s ease
     }
 
     .panel:hover {
       transform: translateY(-2px);
-      box-shadow: 0 22px 55px rgba(0, 0, 0, .14);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, .14)
     }
 
     .panel::after {
@@ -152,14 +150,14 @@
       height: 240px;
       background: radial-gradient(circle at 30% 30%, rgba(255, 111, 145, .35), transparent 60%);
       transform: rotate(12deg);
-      pointer-events: none;
+      pointer-events: none
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 14px;
+      margin-bottom: 14px
     }
 
     .badge {
@@ -170,11 +168,11 @@
       box-shadow: 0 10px 24px rgba(255, 111, 145, .25);
       display: grid;
       place-items: center;
-      color: white;
+      color: #fff;
       font-weight: 900;
       letter-spacing: .5px;
       position: relative;
-      overflow: hidden;
+      overflow: hidden
     }
 
     .badge::before {
@@ -183,7 +181,7 @@
       inset: -60% -40%;
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .35), transparent);
       transform: rotate(25deg);
-      animation: shine 2.8s ease-in-out infinite;
+      animation: shine 2.8s ease-in-out infinite
     }
 
     @keyframes shine {
@@ -203,13 +201,13 @@
     h1 {
       font-size: 22px;
       margin: 0;
-      line-height: 1.15;
+      line-height: 1.15
     }
 
     .sub {
       margin: 6px 0 0;
       color: var(--muted);
-      font-size: 13.5px;
+      font-size: 13.5px
     }
 
     .right {
@@ -222,7 +220,7 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       position: relative;
-      overflow: hidden;
+      overflow: hidden
     }
 
     .right::before {
@@ -233,7 +231,7 @@
       width: 260px;
       height: 260px;
       background: radial-gradient(circle at 60% 40%, rgba(255, 150, 113, .35), transparent 62%);
-      pointer-events: none;
+      pointer-events: none
     }
 
     .kicker {
@@ -242,7 +240,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      flex-wrap: wrap;
+      flex-wrap: wrap
     }
 
     .pill {
@@ -254,11 +252,11 @@
       background: rgba(255, 111, 145, .12);
       border: 1px solid rgba(255, 111, 145, .22);
       width: max-content;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, .05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .05)
     }
 
     .pill b {
-      color: var(--accent);
+      color: var(--accent)
     }
 
     .progress {
@@ -268,7 +266,7 @@
       gap: 12px;
       font-size: 13px;
       color: var(--muted);
-      margin-top: 2px;
+      margin-top: 2px
     }
 
     .bar {
@@ -276,7 +274,7 @@
       height: 10px;
       background: rgba(0, 0, 0, .06);
       border-radius: 999px;
-      overflow: hidden;
+      overflow: hidden
     }
 
     .bar>div {
@@ -284,19 +282,18 @@
       width: 0%;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
       border-radius: 999px;
-      transition: width .45s cubic-bezier(.2, .9, .2, 1);
+      transition: width .45s cubic-bezier(.2, .9, .2, 1)
     }
 
     label {
       display: block;
       font-size: 13px;
       color: var(--muted);
-      margin: 12px 0 6px;
+      margin: 12px 0 6px
     }
 
-    /* nicer dropdown */
     .selectWrap {
-      position: relative;
+      position: relative
     }
 
     .selectWrap::after {
@@ -307,11 +304,12 @@
       transform: translateY(-50%);
       color: rgba(0, 0, 0, .45);
       pointer-events: none;
-      font-size: 16px;
+      font-size: 16px
     }
 
     select,
-    button {
+    button,
+    input {
       width: 100%;
       border: none;
       border-radius: 14px;
@@ -322,28 +320,33 @@
       box-shadow: 0 10px 24px rgba(0, 0, 0, .06);
       transition: box-shadow .2s ease, transform .08s ease;
       appearance: none;
-      -webkit-appearance: none;
+      -webkit-appearance: none
+    }
+
+    input {
+      padding: 12px
     }
 
     select:focus,
-    button:focus {
-      box-shadow: var(--shadow2), var(--focus);
+    button:focus,
+    input:focus {
+      box-shadow: var(--shadow2), var(--focus)
     }
 
     button {
       cursor: pointer;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: white;
+      color: #fff;
       font-weight: 800;
-      letter-spacing: .2px;
+      letter-spacing: .2px
     }
 
     button:hover {
-      filter: saturate(1.05) brightness(1.02);
+      filter: saturate(1.05) brightness(1.02)
     }
 
     button:active {
-      transform: translateY(1px) scale(.995);
+      transform: translateY(1px) scale(.995)
     }
 
     button.ghost {
@@ -351,57 +354,47 @@
       color: var(--ink);
       border: 1px solid rgba(0, 0, 0, .08);
       box-shadow: 0 10px 24px rgba(0, 0, 0, .06);
-      padding: 12px;
-    }
-
-    button.ghost:hover {
-      filter: none;
+      padding: 12px
     }
 
     button:disabled {
       opacity: .6;
-      cursor: not-allowed;
+      cursor: not-allowed
     }
 
-    /* Screen transitions */
     .screen {
       opacity: 1;
       transform: translateY(0);
-      transition: opacity .22s ease, transform .22s ease;
+      transition: opacity .22s ease, transform .22s ease
     }
 
     .screen.out {
       opacity: 0;
-      transform: translateY(10px);
-    }
-
-    .screen.in {
-      opacity: 0;
-      transform: translateY(-8px);
+      transform: translateY(10px)
     }
 
     .qwrap {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 10px
     }
 
     .qtitle {
       font-size: 18px;
-      margin: 0;
+      margin: 0
     }
 
     .hint {
       margin: 0;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 13px
     }
 
     .chips {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      margin-top: -4px;
+      margin-top: -4px
     }
 
     .chip {
@@ -410,37 +403,33 @@
       border-radius: 999px;
       background: rgba(0, 0, 0, .04);
       border: 1px solid rgba(0, 0, 0, .07);
-      color: rgba(0, 0, 0, .65);
+      color: rgba(0, 0, 0, .65)
     }
 
     .choices {
       display: grid;
       gap: 10px;
-      margin-top: 8px;
+      margin-top: 8px
     }
 
     .choice {
       border: 1px solid rgba(0, 0, 0, .08);
       background: #fff;
       border-radius: 16px;
-      padding: 12px 12px;
+      padding: 12px;
       display: flex;
       gap: 10px;
       align-items: flex-start;
       box-shadow: 0 10px 22px rgba(0, 0, 0, .05);
       cursor: pointer;
       user-select: none;
-      transition: transform .08s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+      transition: transform .08s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease
     }
 
     .choice:hover {
       transform: translateY(-1px);
       border-color: rgba(255, 111, 145, .35);
-      box-shadow: 0 14px 26px rgba(0, 0, 0, .07);
-    }
-
-    .choice:active {
-      transform: translateY(0px) scale(.997);
+      box-shadow: 0 14px 26px rgba(0, 0, 0, .07)
     }
 
     .bubble {
@@ -453,30 +442,30 @@
       font-weight: 900;
       color: var(--accent);
       flex: 0 0 auto;
-      margin-top: 1px;
+      margin-top: 1px
     }
 
     .choice.selected {
       border-color: rgba(255, 111, 145, .75);
       box-shadow: 0 16px 30px rgba(255, 111, 145, .12);
-      background: rgba(255, 111, 145, .06);
+      background: rgba(255, 111, 145, .06)
     }
 
     .footerRow {
       display: flex;
       gap: 10px;
-      margin-top: 8px;
+      margin-top: 8px
     }
 
     .footerRow>* {
-      flex: 1;
+      flex: 1
     }
 
     .tiny {
       margin-top: 10px;
       font-size: 12px;
       color: var(--muted);
-      line-height: 1.4;
+      line-height: 1.4
     }
 
     .warn {
@@ -486,7 +475,7 @@
       border: 1px solid rgba(214, 69, 80, .25);
       color: #8a1f28;
       font-size: 13px;
-      margin-top: 10px;
+      margin-top: 10px
     }
 
     .okbox {
@@ -496,10 +485,9 @@
       border: 1px solid rgba(24, 165, 88, .22);
       color: #0f5b31;
       font-size: 13px;
-      margin-top: 10px;
+      margin-top: 10px
     }
 
-    /* Final screen aesthetics */
     .finalCard {
       margin-top: 8px;
       border-radius: 22px;
@@ -510,7 +498,7 @@
       position: relative;
       overflow: hidden;
       transform-origin: center;
-      animation: pop .6s cubic-bezier(.2, 1, .2, 1) both;
+      animation: pop .6s cubic-bezier(.2, 1, .2, 1) both
     }
 
     @keyframes pop {
@@ -525,35 +513,23 @@
       }
     }
 
-    .finalCard::before {
-      content: "";
-      position: absolute;
-      inset: -60% -30% auto auto;
-      width: 260px;
-      height: 260px;
-      background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, .65), transparent 60%);
-      transform: rotate(18deg);
-      opacity: .55;
-      pointer-events: none;
-    }
-
     .scoreBig {
       font-size: 44px;
       font-weight: 950;
       margin: 4px 0 0;
-      letter-spacing: -1px;
+      letter-spacing: -1px
     }
 
     .scoreSub {
       margin: 6px 0 0;
-      color: rgba(0, 0, 0, .62);
+      color: rgba(0, 0, 0, .62)
     }
 
     .sparkRow {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
-      margin-top: 12px;
+      margin-top: 12px
     }
 
     .spark {
@@ -562,20 +538,15 @@
       background: rgba(255, 255, 255, .75);
       border: 1px solid rgba(0, 0, 0, .06);
       border-radius: 16px;
-      padding: 10px 12px;
+      padding: 10px 12px
     }
 
-    .spark b {
-      color: rgba(0, 0, 0, .78);
-    }
-
-    /* Confetti */
     .confetti {
       position: fixed;
       inset: 0;
       pointer-events: none;
       z-index: 5;
-      overflow: hidden;
+      overflow: hidden
     }
 
     .confetti i {
@@ -585,70 +556,42 @@
       border-radius: 3px;
       opacity: .9;
       animation: fall 1.8s linear forwards;
-      transform: translateY(-20px) rotate(0deg);
+      transform: translateY(-20px) rotate(0deg)
     }
 
     @keyframes fall {
       to {
         transform: translateY(110vh) rotate(420deg);
-        opacity: 1;
+        opacity: 1
       }
     }
 
-    /* cute swoosh animation */
     .swooshIn {
-      animation: swooshIn .35s cubic-bezier(.2, .9, .2, 1) both;
+      animation: swooshIn .35s cubic-bezier(.2, .9, .2, 1) both
     }
 
     @keyframes swooshIn {
       from {
         opacity: 0;
         transform: translateY(10px) scale(.98);
-        filter: blur(2px);
+        filter: blur(2px)
       }
 
       to {
         opacity: 1;
         transform: translateY(0) scale(1);
-        filter: blur(0);
+        filter: blur(0)
       }
     }
 
     .hide {
-      display: none !important;
+      display: none !important
     }
 
-    @media (max-width: 900px) {
+    @media (max-width:900px) {
       .app {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr
       }
-    }
-
-    @media (max-width: 900px) {
-      .app {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* NEW: hide helper for swoosh boxes */
-    .hide {
-      display: none;
-    }
-
-    /* NEW: style for manual input fields */
-    input {
-      width: 100%;
-      border: none;
-      border-radius: 14px;
-      padding: 12px 12px;
-      font-size: 15px;
-      outline: none;
-      background: #fff;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, .06);
-    }
-
-    input:focus {
-      box-shadow: var(--shadow), var(--focus);
     }
   </style>
 </head>
@@ -657,7 +600,6 @@
   <div class="blob b1"></div>
   <div class="blob b2"></div>
   <div class="blob b3"></div>
-
   <div class="confetti" id="confetti" aria-hidden="true"></div>
 
   <div class="app">
@@ -669,7 +611,6 @@
           <p class="sub">One attempt only • shuffled questions • sound effects</p>
         </div>
       </div>
-
       <div id="screen" class="screen"></div>
     </div>
 
@@ -678,7 +619,6 @@
         <span class="pill">Student: <b id="studentLabel">—</b></span>
         <span class="pill">Status: <b id="statusLabel">Not started</b></span>
       </div>
-
       <div class="progress">
         <div>Progress</div>
         <div><span id="progressText">—</span></div>
@@ -686,7 +626,6 @@
       <div class="bar">
         <div id="barFill"></div>
       </div>
-
       <div class="tiny" id="rulesText">
         <b>Rules:</b><br>
         • You only get <b>1 attempt</b>. Once submitted, it’s locked.<br>
@@ -698,225 +637,8 @@
 
   <script>
     /* =========================
-       STUDENT LISTS
+       SOUND (single, consistent)
     ========================= */
-    // 🔊 MIXKIT SOUNDS (panic + timeout)
-    const SFX_PANIC = "blaring.mp3";
-    const SFX_TIMEOUT = "gameover.mp3";
-    // ✅ Preload & play helper for MP3 sfx (works on file:// too)
-    let sfxPanic = null;
-    let sfxTimeout = null;
-
-    function setupSfx() {
-      // create once
-      if (!sfxPanic) {
-        sfxPanic = new Audio(SFX_PANIC);
-        sfxPanic.preload = "auto";
-        sfxPanic.volume = 1.0;
-      }
-      if (!sfxTimeout) {
-        sfxTimeout = new Audio(SFX_TIMEOUT);
-        sfxTimeout.preload = "auto";
-        sfxTimeout.volume = 1.0;
-      }
-    }
-
-    function playMp3(audioObj) {
-      if (!audioObj) return;
-      try {
-        audioObj.pause();
-        audioObj.currentTime = 0;
-      } catch (e) { }
-      audioObj.play().catch(err => {
-        console.warn("Audio blocked / failed:", err);
-      });
-    }
-    // ✅ STUDENT LISTS
-    const STUDENTS = {
-      H11: [
-        "ELDRINE HILIM",
-        "SYASYA HUMAIRAH BINTI MOHAMAD",
-        "DEBRA JOYCE MOS ANAK DARIUS",
-        "ELVIN BUAS",
-        "NURUL QISTINA BINTI ROSSLAN",
-        "NUR IMTINAN BINTI ABDULLAH",
-        "JOSHUA IVAN JENIUS",
-        "LYDIA CHONG TZE SHEN",
-        "DAYANG NUR FITRI BINTI RATININ",
-        "KHUZARATUL MAISARAH BINTI SYAMSUL",
-        "MUHAMMAD FARID ZAKWAN BIN ABDUL HAMIT",
-        "NARISON NABARA ANAK NORIHEN",
-        "MARYYON LUDYYK ANAK NADIE",
-        "STEFANNIE NATALLYSSA JOSEPH",
-        "LEATRICIA LEONARD SANTANI",
-        "OLLETHEA IVYE ORNEST",
-        "WONG ZHI NING",
-        "MEIRLYN MISU",
-        "NUR BALQIS MAISARAH BINTI BOHARI",
-        "NURUL AYU NAZIERA BINTI RAPE",
-        "RACHEAL ANAK RAHMAN",
-        "JEFFREY LAU JUN HONG",
-        "MUHAMMAD SHAHZWAN",
-        "SITI NURUSSAKIENAH BINTI RAMLIE"
-      ],
-      H12: [
-        "NIELEONA MAIE ANAK NINGKAN",
-        "SITI NURJAYA BINTI HARON",
-        "TIMOTI CRESPO JAYOM ANAK PETER",
-        "VANESS DIOSLIN",
-        "MUHAMMAD ALIFF HAQIMIE BIN ALIYAS",
-        "NUR AMIRAH AZWANI BINTI AZMAN",
-        "SHENNA LAI LAIHEE @ JEM",
-        "HEIZER MLORRIE BAYRE",
-        "SHIRLEY SCARLET SUNDAI ANAK SANI",
-        "NUR AIEZA ZUREEN BINTI ABDULLAH",
-        "NURFIFI ELLYANA BINTI ZAINUDIN",
-        "WISHLEY JETIE ANAK GEORGE MARA",
-        "RIANA NATASHA BINTI ROSMADI",
-        "NUR DHANIAH KHAIRIAH BINTI ENDERA YUSUF",
-        "LOUIS NGU YEN JUN",
-        "CHRISDAH GRACE MARINUS",
-        "SYAHINDAH ANNUR BINTI SANGKALA",
-        "ALIECIA RISSE ANAK ALBERT",
-        "ABBY QAIRINA BINTI SEMAN",
-        "MUHAMMAD ALIFF BIN ANDY YAHIR",
-        "BRENDA MELONIE JEMROL",
-        "NUR FATIN SOFEA BINTI SONI",
-        "ARIQ SHAFWAN BIN SUHARDI"
-      ],
-      H02: [
-        "ALAN TERRY ANAK TOMMY",
-        "NUR AINA ZULAIKHA BINTI MORTADZA",
-        "MOHD NORAZWAN BIN JALANI",
-        "ERNILLA ZUEAMYRA BINTI ERWAN",
-        "GRYCIE ARAVILLA JERRY",
-        "PUTRI NUR SYUHADA",
-        "NUR HANI BINTI MOHD AFFANDI",
-        "SHAMIMIE SHAKILA BINTI ABDULLAH",
-        "JUDD DARRYL SITOH",
-        "WEE LIE TSHUNG",
-        "AFIF SYAFIQ BIN HISHAM",
-        "NUR FATIHAH ALIA BINTI ZULHALIM",
-        "GERROND ALVIE MAXIMUS",
-        "MOHAMAD ASLAM QAWI BIN MOHD SYAZANI",
-        "HAIRIEL HADIF BIN MOHD SUFRI",
-        "MELINDA JUPIRIN",
-        "ELVERNA ENGELBERT",
-        "WINNIE BONG SI QI",
-        "LUCAS HUONG QI HAO",
-        "ALDEN ANDREW",
-        "MASLIANA BINTI MADSAE",
-        "NORHAZRINIE BINTI ROBERT @ MOHD IRWAN",
-        "JOVINIA BINTI JOSEPH"
-      ]
-    };
-
-    /* =========================
-       QUESTION BANK (same as before)
-    ========================= */
-    const BASE_QUESTIONS = [
-      {
-        key: "enzyme_specificity", stems: ["Why are enzymes highly specific in catalysis?", "Enzyme specificity mainly depends on what?", "What makes an enzyme recognise only its specific substrate?"], type: "single",
-        options: [{ t: "Active site shape complements the substrate", correct: true }, { t: "Enzymes supply energy for the reaction", correct: false }, { t: "Enzymes permanently bind substrates", correct: false }, { t: "Enzymes change the product structure directly", correct: false }]
-      },
-      {
-        key: "enzyme_denature", stems: ["Enzyme activity sharply decreases above optimum temperature because…", "When an enzyme is denatured, which change occurs?", "Why does enzyme efficiency decline when temperature is too high?"], type: "single",
-        options: [{ t: "Active site structure is disrupted (denaturation)", correct: true }, { t: "Substrate melts and disappears", correct: false }, { t: "pH always increases drastically", correct: false }, { t: "Cofactor is consumed permanently", correct: false }]
-      },
-      {
-        key: "respiration_most_atp", stems: ["Which stage of aerobic respiration yields the highest ATP?", "Most ATP molecules are generated in which step of respiration?", "Where is the bulk of ATP produced during aerobic respiration?"], type: "single",
-        options: [{ t: "Electron transport chain / oxidative phosphorylation", correct: true }, { t: "Glycolysis", correct: false }, { t: "Link reaction", correct: false }, { t: "Krebs cycle", correct: false }]
-      },
-      {
-        key: "oxygen_final_acceptor", stems: ["When oxygen is absent, the electron transport chain stops because…", "Oxidative phosphorylation requires oxygen because oxygen acts as…", "Without oxygen, ETC ceases because oxygen normally functions as…"], type: "single",
-        options: [{ t: "The final electron acceptor", correct: true }, { t: "A coenzyme that donates electrons", correct: false }, { t: "A substrate for ATP synthase", correct: false }, { t: "An enzyme that breaks down glucose", correct: false }]
-      },
-      {
-        key: "photolysis_psii", stems: ["Photolysis of water occurs at…", "Which photosynthetic complex splits water and releases oxygen?", "Water molecules are split during photosynthesis at…"], type: "single",
-        options: [{ t: "Photosystem II (thylakoid membrane)", correct: true }, { t: "Calvin cycle (stroma)", correct: false }, { t: "Photosystem I only", correct: false }, { t: "Cytoplasm", correct: false }]
-      },
-      {
-        key: "light_reaction_products", stems: ["Light-dependent reactions mainly function to…", "Select TWO outputs of the light-dependent reactions.", "Which are produced in light reactions and used in Calvin cycle? (Select TWO)"], type: "multi2", instruction: "Select TWO answers.",
-        options: [{ t: "ATP", correct: true }, { t: "NADPH", correct: true }, { t: "Glucose (directly)", correct: false }, { t: "RuBP (directly)", correct: false }]
-      },
-      {
-        key: "bohr_effect", stems: ["Active tissues release O₂ more easily because…", "In metabolically active tissues, haemoglobin unloads oxygen more readily because…", "Bohr effect causes more oxygen release in tissues due to…"], type: "single",
-        options: [{ t: "High CO₂ lowers pH and reduces Hb affinity for O₂", correct: true }, { t: "High pH strengthens Hb–O₂ binding", correct: false }, { t: "Temperature drops and Hb releases O₂", correct: false }, { t: "CO₂ decreases so Hb releases more O₂", correct: false }]
-      },
-      {
-        key: "bohr_definition", stems: ["Bohr effect describes…", "Bohr effect explains the relationship between…", "The Bohr shift results in which outcome?"], type: "single",
-        options: [{ t: "Reduced Hb affinity for O₂ when CO₂ rises (lower pH)", correct: true }, { t: "Increased Hb affinity for O₂ when CO₂ rises", correct: false }, { t: "Oxygen loading decreases in lungs when CO₂ is low", correct: false }, { t: "CO binding to haemoglobin", correct: false }]
-      },
-      {
-        key: "valve_open_ventricular", stems: ["During ventricular contraction, which valve opens?", "Opening of semilunar valves indicates…", "Semilunar valves open during which phase?"], type: "single",
-        options: [{ t: "Ventricular systole / ventricular ejection", correct: true }, { t: "Atrial systole", correct: false }, { t: "Ventricular diastole", correct: false }, { t: "Passive atrial filling only", correct: false }]
-      },
-      {
-        key: "lub_sound", stems: ["The first heart sound (“lub”) is produced by…", "Which event causes the “lub” sound?", "First heart sound corresponds to…"], type: "single",
-        options: [{ t: "Closure of atrioventricular (AV) valves", correct: true }, { t: "Opening of semilunar valves", correct: false }, { t: "Closure of semilunar valves", correct: false }, { t: "Blood entering atria", correct: false }]
-      },
-      {
-        key: "negative_feedback", stems: ["Negative feedback ensures that…", "Negative feedback mechanism acts to…", "Homeostasis relies on negative feedback loops in order to…"], type: "single",
-        options: [{ t: "Internal conditions remain stable around set points", correct: true }, { t: "Response is amplified continuously", correct: false }, { t: "Hormone secretion increases exponentially", correct: false }, { t: "Body temperature fluctuates widely", correct: false }]
-      },
-      {
-        key: "glucagon", stems: ["Which hormone raises blood glucose level?", "A hormone that elevates blood glucose by stimulating glycogen breakdown is…", "When glucose is low, which hormone helps raise blood glucose?"], type: "single",
-        options: [{ t: "Glucagon", correct: true }, { t: "Insulin", correct: false }, { t: "ADH", correct: false }, { t: "Calcitonin", correct: false }]
-      },
-      {
-        key: "depolarisation", stems: ["Depolarisation of neuron membrane occurs when…", "What causes the rapid rise in membrane potential during an action potential?", "Depolarisation results from…"], type: "single",
-        options: [{ t: "Voltage-gated Na⁺ channels open (Na⁺ influx)", correct: true }, { t: "K⁺ channels open first (K⁺ efflux)", correct: false }, { t: "Ca²⁺ diffuses out", correct: false }, { t: "Cl⁻ enters the axon hillock", correct: false }]
-      },
-      {
-        key: "saltatory", stems: ["Saltatory conduction refers to…", "Myelination increases conduction speed because…", "Why do myelinated axons conduct impulses faster?"], type: "single",
-        options: [{ t: "Impulse jumps between nodes of Ranvier", correct: true }, { t: "Impulse travels continuously along the axon", correct: false }, { t: "Chemical transmission across synapse is faster", correct: false }, { t: "Myelin makes conduction slower", correct: false }]
-      },
-      {
-        key: "synaptic_vesicles", stems: ["Synaptic vesicles are responsible for…", "Synaptic vesicles contain…", "Which best describes synaptic vesicle function?"], type: "single",
-        options: [{ t: "Storing neurotransmitters", correct: true }, { t: "Generating membrane potential", correct: false }, { t: "Synthesising ATP", correct: false }, { t: "Repolarising the membrane", correct: false }]
-      },
-      {
-        key: "exercise_ph", stems: ["During vigorous exercise, blood pH decreases due to…", "Which changes occur during vigorous exercise? (Select TWO)", "Under strenuous activity, which are likely effects? (Select TWO)"], type: "multi2", instruction: "Select TWO answers.",
-        options: [{ t: "Increased CO₂ production", correct: true }, { t: "Increased lactic acid", correct: true }, { t: "Blood pH increases", correct: false }, { t: "Respiration rate decreases drastically", correct: false }]
-      },
-      {
-        key: "block_etc", stems: ["Blocking the ETC will directly cause…", "If the electron transport chain is inhibited…", "When ETC is blocked, what happens immediately?"], type: "single",
-        options: [{ t: "Failure to regenerate NAD⁺ (NADH accumulates)", correct: true }, { t: "Increased photophosphorylation", correct: false }, { t: "Increased carbon fixation", correct: false }, { t: "ATP synthase denatures", correct: false }]
-      },
-      {
-        key: "location_matching", stems: ["Correct pairing of process and location is…", "Which pairing is CORRECT?", "Which association is correct?"], type: "single",
-        options: [{ t: "ETC – inner mitochondrial membrane", correct: true }, { t: "Glycolysis – mitochondrial matrix", correct: false }, { t: "Krebs cycle – cytoplasm", correct: false }, { t: "Calvin cycle – thylakoid membrane", correct: false }]
-      },
-      {
-        key: "low_adh", stems: ["Low ADH secretion results in…", "Too little ADH leads to…", "A person with insufficient ADH will likely have…"], type: "single",
-        options: [{ t: "Large volume of dilute urine", correct: true }, { t: "Small volume of concentrated urine", correct: false }, { t: "Increased water reabsorption", correct: false }, { t: "Increased blood pressure immediately", correct: false }]
-      },
-      {
-        key: "demyelination", stems: ["Damage to myelin sheath causes…", "Loss of myelin sheath will most likely cause…", "Demyelination is associated with…"], type: "single",
-        options: [{ t: "Slower conduction because impulses can’t jump nodes efficiently", correct: true }, { t: "Faster impulse due to ion leak", correct: false }, { t: "No change in conduction speed", correct: false }, { t: "Increased synaptic vesicle release", correct: false }]
-      },
-    ];
-
-    function mulberry32(seed) { let a = seed >>> 0; return function () { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
-    function hashString(str) { let h = 2166136261; for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
-    function shuffle(arr, rnd = Math.random) { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1));[a[i], a[j]] = [a[j], a[i]]; } return a; }
-
-    function buildSet(setNo, rnd) {
-      const stemRnd = mulberry32(hashString("W12_STEMS_" + setNo));
-      const qList = BASE_QUESTIONS.map((q, idx) => {
-        const stem = q.stems[(idx + Math.floor(stemRnd() * q.stems.length) + setNo) % q.stems.length];
-        const options = shuffle(q.options, rnd).map(o => ({ ...o }));
-        return { key: q.key, stem, type: q.type, instruction: q.instruction || null, options };
-      });
-      return shuffle(qList, rnd);
-    }
-
-    /* =========================
-       SOUND
-    ========================= */
-    // =========================
-    // MP3 SFX (Mixkit files)
-    // =========================
     const SFX = {
       panic: new Audio("blaring.mp3"),
       gameover: new Audio("gameover.mp3"),
@@ -927,42 +649,40 @@
       a.volume = 0.9;
     });
 
-    function playSfx(audio) {
+    function stopSfx(audio) {
+      if (!audio) return;
       try {
         audio.pause();
         audio.currentTime = 0;
-        audio.play();
       } catch (e) { }
     }
+
+    function stopAllSfx() {
+      stopSfx(SFX.panic);
+      stopSfx(SFX.gameover);
+    }
+
+    function playSfx(audioObj) {
+      if (!audioObj) return;
+      try {
+        audioObj.pause();
+        audioObj.currentTime = 0;
+      } catch (e) { }
+      audioObj.play().catch(err => console.warn("Audio blocked:", err));
+    }
+
     let audioCtx = null;
-    function ensureAudio() { if (!audioCtx) { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } }
+    function ensureAudio() {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
 
     function playTone(type) {
-      // =========================
-      // MP3 SFX (Mixkit)
-      // =========================
-      const SFX = {
-        panic: new Audio("blaring.mp3"),     // 5s warning
-        gameover: new Audio("gameover.mp3"), // time's up
-      };
-
-      Object.values(SFX).forEach(a => {
-        a.preload = "auto";
-        a.volume = 0.9;
-      });
-
-      function playSfx(audio) {
-        try {
-          audio.pause();
-          audio.currentTime = 0;
-          audio.play();
-        } catch (e) { }
-      }
       ensureAudio();
       const t0 = audioCtx.currentTime;
       const o = audioCtx.createOscillator();
       const g = audioCtx.createGain();
       o.type = "sine";
+
       if (type === "ok") {
         o.frequency.setValueAtTime(660, t0);
         o.frequency.exponentialRampToValueAtTime(880, t0 + 0.08);
@@ -982,12 +702,10 @@
       }
     }
 
-    // Extravagant finish sound (short celebratory arpeggio)
     function playFinishFanfare() {
       ensureAudio();
       const t0 = audioCtx.currentTime;
-      const notes = [523.25, 659.25, 783.99, 1046.5]; // C5 E5 G5 C6
-
+      const notes = [523.25, 659.25, 783.99, 1046.5];
       notes.forEach((f, i) => {
         const o = audioCtx.createOscillator();
         const g = audioCtx.createGain();
@@ -999,82 +717,101 @@
         g.gain.exponentialRampToValueAtTime(0.22, start + 0.02);
         g.gain.exponentialRampToValueAtTime(0.0001, end);
         o.connect(g); g.connect(audioCtx.destination);
-        o.start(start);
-        o.stop(end);
-      });
-
-      // final sparkle chord
-      const chord = [659.25, 783.99, 987.77];
-      chord.forEach((f, i) => {
-        const o = audioCtx.createOscillator();
-        const g = audioCtx.createGain();
-        o.type = "sine";
-        const start = t0 + 0.34;
-        const end = start + 0.35;
-        o.frequency.setValueAtTime(f, start);
-        g.gain.setValueAtTime(0.0001, start);
-        g.gain.exponentialRampToValueAtTime(0.14, start + 0.03);
-        g.gain.exponentialRampToValueAtTime(0.0001, end);
-        o.connect(g); g.connect(audioCtx.destination);
-        o.start(start);
-        o.stop(end);
+        o.start(start); o.stop(end);
       });
     }
 
     /* =========================
-       STATE
+       STUDENT LISTS
     ========================= */
-    const screen = document.getElementById("screen");
-    const studentLabel = document.getElementById("studentLabel");
-    const statusLabel = document.getElementById("statusLabel");
-    const progressText = document.getElementById("progressText");
-    const barFill = document.getElementById("barFill");
-    const confetti = document.getElementById("confetti");
+    const STUDENTS = {
+      H11: ["ELDRINE HILIM", "SYASYA HUMAIRAH BINTI MOHAMAD", "DEBRA JOYCE MOS ANAK DARIUS", "ELVIN BUAS", "NURUL QISTINA BINTI ROSSLAN", "NUR IMTINAN BINTI ABDULLAH", "JOSHUA IVAN JENIUS", "LYDIA CHONG TZE SHEN", "DAYANG NUR FITRI BINTI RATININ", "KHUZARATUL MAISARAH BINTI SYAMSUL", "MUHAMMAD FARID ZAKWAN BIN ABDUL HAMIT", "NARISON NABARA ANAK NORIHEN", "MARYYON LUDYYK ANAK NADIE", "STEFANNIE NATALLYSSA JOSEPH", "LEATRICIA LEONARD SANTANI", "OLLETHEA IVYE ORNEST", "WONG ZHI NING", "MEIRLYN MISU", "NUR BALQIS MAISARAH BINTI BOHARI", "NURUL AYU NAZIERA BINTI RAPE", "RACHEAL ANAK RAHMAN", "JEFFREY LAU JUN HONG", "MUHAMMAD SHAHZWAN", "SITI NURUSSAKIENAH BINTI RAMLIE"],
+      H12: ["NIELEONA MAIE ANAK NINGKAN", "SITI NURJAYA BINTI HARON", "TIMOTI CRESPO JAYOM ANAK PETER", "VANESS DIOSLIN", "MUHAMMAD ALIFF HAQIMIE BIN ALIYAS", "NUR AMIRAH AZWANI BINTI AZMAN", "SHENNA LAI LAIHEE @ JEM", "HEIZER MLORRIE BAYRE", "SHIRLEY SCARLET SUNDAI ANAK SANI", "NUR AIEZA ZUREEN BINTI ABDULLAH", "NURFIFI ELLYANA BINTI ZAINUDIN", "WISHLEY JETIE ANAK GEORGE MARA", "RIANA NATASHA BINTI ROSMADI", "NUR DHANIAH KHAIRIAH BINTI ENDERA YUSUF", "LOUIS NGU YEN JUN", "CHRISDAH GRACE MARINUS", "SYAHINDAH ANNUR BINTI SANGKALA", "ALIECIA RISSE ANAK ALBERT", "ABBY QAIRINA BINTI SEMAN", "MUHAMMAD ALIFF BIN ANDY YAHIR", "BRENDA MELONIE JEMROL", "NUR FATIN SOFEA BINTI SONI", "ARIQ SHAFWAN BIN SUHARDI"],
+      H02: ["ALAN TERRY ANAK TOMMY", "NUR AINA ZULAIKHA BINTI MORTADZA", "MOHD NORAZWAN BIN JALANI", "ERNILLA ZUEAMYRA BINTI ERWAN", "GRYCIE ARAVILLA JERRY", "PUTRI NUR SYUHADA", "NUR HANI BINTI MOHD AFFANDI", "SHAMIMIE SHAKILA BINTI ABDULLAH", "JUDD DARRYL SITOH", "WEE LIE TSHUNG", "AFIF SYAFIQ BIN HISHAM", "NUR FATIHAH ALIA BINTI ZULHALIM", "GERROND ALVIE MAXIMUS", "MOHAMAD ASLAM QAWI BIN MOHD SYAZANI", "HAIRIEL HADIF BIN MOHD SUFRI", "MELINDA JUPIRIN", "ELVERNA ENGELBERT", "WINNIE BONG SI QI", "LUCAS HUONG QI HAO", "ALDEN ANDREW", "MASLIANA BINTI MADSAE", "NORHAZRINIE BINTI ROBERT @ MOHD IRWAN", "JOVINIA BINTI JOSEPH"],
+    };
+
+    /* =========================
+       QUESTION BANK
+    ========================= */
+    const BASE_QUESTIONS = [
+      { key: "enzyme_specificity", stems: ["Why are enzymes highly specific in catalysis?", "Enzyme specificity mainly depends on what?", "What makes an enzyme recognise only its specific substrate?"], type: "single", options: [{ t: "Active site shape complements the substrate", correct: true }, { t: "Enzymes supply energy for the reaction", correct: false }, { t: "Enzymes permanently bind substrates", correct: false }, { t: "Enzymes change the product structure directly", correct: false }] },
+      { key: "enzyme_denature", stems: ["Enzyme activity sharply decreases above optimum temperature because…", "When an enzyme is denatured, which change occurs?", "Why does enzyme efficiency decline when temperature is too high?"], type: "single", options: [{ t: "Active site structure is disrupted (denaturation)", correct: true }, { t: "Substrate melts and disappears", correct: false }, { t: "pH always increases drastically", correct: false }, { t: "Cofactor is consumed permanently", correct: false }] },
+      { key: "respiration_most_atp", stems: ["Which stage of aerobic respiration yields the highest ATP?", "Most ATP molecules are generated in which step of respiration?", "Where is the bulk of ATP produced during aerobic respiration?"], type: "single", options: [{ t: "Electron transport chain / oxidative phosphorylation", correct: true }, { t: "Glycolysis", correct: false }, { t: "Link reaction", correct: false }, { t: "Krebs cycle", correct: false }] },
+      { key: "oxygen_final_acceptor", stems: ["When oxygen is absent, the electron transport chain stops because…", "Oxidative phosphorylation requires oxygen because oxygen acts as…", "Without oxygen, ETC ceases because oxygen normally functions as…"], type: "single", options: [{ t: "The final electron acceptor", correct: true }, { t: "A coenzyme that donates electrons", correct: false }, { t: "A substrate for ATP synthase", correct: false }, { t: "An enzyme that breaks down glucose", correct: false }] },
+      { key: "photolysis_psii", stems: ["Photolysis of water occurs at…", "Which photosynthetic complex splits water and releases oxygen?", "Water molecules are split during photosynthesis at…"], type: "single", options: [{ t: "Photosystem II (thylakoid membrane)", correct: true }, { t: "Calvin cycle (stroma)", correct: false }, { t: "Photosystem I only", correct: false }, { t: "Cytoplasm", correct: false }] },
+      { key: "light_reaction_products", stems: ["Light-dependent reactions mainly function to…", "Select TWO outputs of the light-dependent reactions.", "Which are produced in light reactions and used in Calvin cycle? (Select TWO)"], type: "multi2", instruction: "Select TWO answers.", options: [{ t: "ATP", correct: true }, { t: "NADPH", correct: true }, { t: "Glucose (directly)", correct: false }, { t: "RuBP (directly)", correct: false }] },
+      { key: "bohr_effect", stems: ["Active tissues release O₂ more easily because…", "In metabolically active tissues, haemoglobin unloads oxygen more readily because…", "Bohr effect causes more oxygen release in tissues due to…"], type: "single", options: [{ t: "High CO₂ lowers pH and reduces Hb affinity for O₂", correct: true }, { t: "High pH strengthens Hb–O₂ binding", correct: false }, { t: "Temperature drops and Hb releases O₂", correct: false }, { t: "CO₂ decreases so Hb releases more O₂", correct: false }] },
+      { key: "bohr_definition", stems: ["Bohr effect describes…", "Bohr effect explains the relationship between…", "The Bohr shift results in which outcome?"], type: "single", options: [{ t: "Reduced Hb affinity for O₂ when CO₂ rises (lower pH)", correct: true }, { t: "Increased Hb affinity for O₂ when CO₂ rises", correct: false }, { t: "Oxygen loading decreases in lungs when CO₂ is low", correct: false }, { t: "CO binding to haemoglobin", correct: false }] },
+      { key: "valve_open_ventricular", stems: ["During ventricular contraction, which valve opens?", "Opening of semilunar valves indicates…", "Semilunar valves open during which phase?"], type: "single", options: [{ t: "Ventricular systole / ventricular ejection", correct: true }, { t: "Atrial systole", correct: false }, { t: "Ventricular diastole", correct: false }, { t: "Passive atrial filling only", correct: false }] },
+      { key: "lub_sound", stems: ["The first heart sound (“lub”) is produced by…", "Which event causes the “lub” sound?", "First heart sound corresponds to…"], type: "single", options: [{ t: "Closure of atrioventricular (AV) valves", correct: true }, { t: "Opening of semilunar valves", correct: false }, { t: "Closure of semilunar valves", correct: false }, { t: "Blood entering atria", correct: false }] },
+      { key: "negative_feedback", stems: ["Negative feedback ensures that…", "Negative feedback mechanism acts to…", "Homeostasis relies on negative feedback loops in order to…"], type: "single", options: [{ t: "Internal conditions remain stable around set points", correct: true }, { t: "Response is amplified continuously", correct: false }, { t: "Hormone secretion increases exponentially", correct: false }, { t: "Body temperature fluctuates widely", correct: false }] },
+      { key: "glucagon", stems: ["Which hormone raises blood glucose level?", "A hormone that elevates blood glucose by stimulating glycogen breakdown is…", "When glucose is low, which hormone helps raise blood glucose?"], type: "single", options: [{ t: "Glucagon", correct: true }, { t: "Insulin", correct: false }, { t: "ADH", correct: false }, { t: "Calcitonin", correct: false }] },
+      { key: "depolarisation", stems: ["Depolarisation of neuron membrane occurs when…", "What causes the rapid rise in membrane potential during an action potential?", "Depolarisation results from…"], type: "single", options: [{ t: "Voltage-gated Na⁺ channels open (Na⁺ influx)", correct: true }, { t: "K⁺ channels open first (K⁺ efflux)", correct: false }, { t: "Ca²⁺ diffuses out", correct: false }, { t: "Cl⁻ enters the axon hillock", correct: false }] },
+      { key: "saltatory", stems: ["Saltatory conduction refers to…", "Myelination increases conduction speed because…", "Why do myelinated axons conduct impulses faster?"], type: "single", options: [{ t: "Impulse jumps between nodes of Ranvier", correct: true }, { t: "Impulse travels continuously along the axon", correct: false }, { t: "Chemical transmission across synapse is faster", correct: false }, { t: "Myelin makes conduction slower", correct: false }] },
+      { key: "synaptic_vesicles", stems: ["Synaptic vesicles are responsible for…", "Synaptic vesicles contain…", "Which best describes synaptic vesicle function?"], type: "single", options: [{ t: "Storing neurotransmitters", correct: true }, { t: "Generating membrane potential", correct: false }, { t: "Synthesising ATP", correct: false }, { t: "Repolarising the membrane", correct: false }] },
+      { key: "exercise_ph", stems: ["During vigorous exercise, blood pH decreases due to…", "Which changes occur during vigorous exercise? (Select TWO)", "Under strenuous activity, which are likely effects? (Select TWO)"], type: "multi2", instruction: "Select TWO answers.", options: [{ t: "Increased CO₂ production", correct: true }, { t: "Increased lactic acid", correct: true }, { t: "Blood pH increases", correct: false }, { t: "Respiration rate decreases drastically", correct: false }] },
+      { key: "block_etc", stems: ["Blocking the ETC will directly cause…", "If the electron transport chain is inhibited…", "When ETC is blocked, what happens immediately?"], type: "single", options: [{ t: "Failure to regenerate NAD⁺ (NADH accumulates)", correct: true }, { t: "Increased photophosphorylation", correct: false }, { t: "Increased carbon fixation", correct: false }, { t: "ATP synthase denatures", correct: false }] },
+      { key: "location_matching", stems: ["Correct pairing of process and location is…", "Which pairing is CORRECT?", "Which association is correct?"], type: "single", options: [{ t: "ETC – inner mitochondrial membrane", correct: true }, { t: "Glycolysis – mitochondrial matrix", correct: false }, { t: "Krebs cycle – cytoplasm", correct: false }, { t: "Calvin cycle – thylakoid membrane", correct: false }] },
+      { key: "low_adh", stems: ["Low ADH secretion results in…", "Too little ADH leads to…", "A person with insufficient ADH will likely have…"], type: "single", options: [{ t: "Large volume of dilute urine", correct: true }, { t: "Small volume of concentrated urine", correct: false }, { t: "Increased water reabsorption", correct: false }, { t: "Increased blood pressure immediately", correct: false }] },
+      { key: "demyelination", stems: ["Damage to myelin sheath causes…", "Loss of myelin sheath will most likely cause…", "Demyelination is associated with…"], type: "single", options: [{ t: "Slower conduction because impulses can’t jump nodes efficiently", correct: true }, { t: "Faster impulse due to ion leak", correct: false }, { t: "No change in conduction speed", correct: false }, { t: "Increased synaptic vesicle release", correct: false }] },
+    ];
+
+    function mulberry32(seed) { let a = seed >>> 0; return function () { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+    function hashString(str) { let h = 2166136261; for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+    function shuffle(arr, rnd = Math.random) { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1));[a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+    function buildSet(setNo, rnd) {
+      const stemRnd = mulberry32(hashString('W12_STEMS_' + setNo));
+      const qList = BASE_QUESTIONS.map((q, idx) => {
+        const stem = q.stems[(idx + Math.floor(stemRnd() * q.stems.length) + setNo) % q.stems.length];
+        const options = shuffle(q.options, rnd).map(o => ({ ...o }));
+        return { key: q.key, stem, type: q.type, instruction: q.instruction || null, options };
+      });
+      return shuffle(qList, rnd);
+    }
+
+    /* =========================
+       STATE + DOM
+    ========================= */
+    const screen = document.getElementById('screen');
+    const studentLabel = document.getElementById('studentLabel');
+    const statusLabel = document.getElementById('statusLabel');
+    const progressText = document.getElementById('progressText');
+    const barFill = document.getElementById('barFill');
+    const confetti = document.getElementById('confetti');
 
     const APP_STATE = {
-      class: null,
-      name: null,
-      locked: false,
-      setNo: null,
-      rnd: null,
-      questions: [],
-      qIndex: 0,
-      answers: [],
-      score: 0,
+      class: null, name: null, locked: false,
+      setNo: null, rnd: null,
+      questions: [], qIndex: 0, answers: [], score: 0,
       timerPanicPlayed: false,
-      // per-question timer only
       timerEndAt: null,
       timerIntervalId: null,
     };
 
     function storageKey() {
-      const c = APP_STATE.class || "";
-      const n = APP_STATE.name || "";
+      const c = APP_STATE.class || '';
+      const n = APP_STATE.name || '';
       return `W12QUIZ_ATTEMPT_${c}__${n}`;
     }
     function loadAttempt() {
-      const k = storageKey();
-      const raw = localStorage.getItem(k);
+      const raw = localStorage.getItem(storageKey());
       if (!raw) return null;
       try { return JSON.parse(raw); } catch { return null; }
     }
     function saveAttempt(payload) { localStorage.setItem(storageKey(), JSON.stringify(payload)); }
 
     function updateRight() {
-      studentLabel.textContent = (APP_STATE.class && APP_STATE.name) ? `${APP_STATE.class} • ${APP_STATE.name}` : "—";
+      studentLabel.textContent = (APP_STATE.class && APP_STATE.name) ? `${APP_STATE.class} • ${APP_STATE.name}` : '—';
+
       if (APP_STATE.questions.length) {
-        progressText.textContent = `${APP_STATE.qIndex + 1} / ${APP_STATE.questions.length}`;
-        // 🔊 play panic sound at 5 seconds left
-        if (sec === 5 && !APP_STATE.timerPanicPlayed) {
-          APP_STATE.timerPanicPlayed = true;
-          playSfx("warning"); // your blaring.mp3
-        }
-        barFill.style.width = `${((APP_STATE.qIndex) / APP_STATE.questions.length) * 100}%`;
-        statusLabel.textContent = "In progress";
+        statusLabel.textContent = 'In progress';
+        // progressText is updated by the timer per question
+        barFill.style.width = `${(APP_STATE.qIndex / APP_STATE.questions.length) * 100}%`;
       } else {
-        progressText.textContent = "—";
-        barFill.style.width = `0%`;
-        statusLabel.textContent = "Not started";
+        statusLabel.textContent = 'Not started';
+        progressText.textContent = '—';
+        barFill.style.width = '0%';
       }
     }
 
@@ -1086,16 +823,183 @@
       }, 160);
     }
 
+    function escapeHtml(s) {
+      return String(s)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+    function sorted(a) { return a.slice().sort((x, y) => x - y); }
+    function arraysEqual(a, b) { if (a.length !== b.length) return false; for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return false; return true; }
     function clamp2Selections(arr) { return arr.slice(0, 2); }
+
+    /* =========================
+       TIMER (per question)
+    ========================= */
+    const TIMER_PER_QUESTION_SEC = 20;
+    function startTimerPerQuestion() {
+      clearInterval(APP_STATE.timerIntervalId);
+      stopAllSfx(); // 🔴 ADD THIS LINE
+
+      APP_STATE.timerPanicPlayed = false;
+      APP_STATE.timerEndAt = Date.now() + TIMER_PER_QUESTION_SEC * 1000;
+      APP_STATE.timerPanicPlayed = false;
+      APP_STATE.timerEndAt = Date.now() + TIMER_PER_QUESTION_SEC * 1000;
+
+      APP_STATE.timerIntervalId = setInterval(() => {
+        const remainingMs = Math.max(0, APP_STATE.timerEndAt - Date.now());
+        const sec = Math.ceil(remainingMs / 1000);
+
+        progressText.textContent = `${APP_STATE.qIndex + 1} / ${APP_STATE.questions.length} • ⏱ ${sec}s`;
+
+        if (!APP_STATE.timerPanicPlayed && sec <= 5 && sec > 0) {
+          APP_STATE.timerPanicPlayed = true;
+          playSfx(SFX.panic);
+        }
+
+        if (remainingMs <= 0) {
+          clearInterval(APP_STATE.timerIntervalId);
+
+          stopSfx(SFX.panic);        // 🔴 ADD THIS
+          playSfx(SFX.gameover);     // 🔴 FIX THIS TOO (see note below)
+
+          if (APP_STATE.qIndex < APP_STATE.questions.length - 1) {
+            APP_STATE.qIndex++;
+            renderQuestion();
+          } else {
+            submitQuiz();
+          }
+        }
+      }, 200);
+    }
 
     /* =========================
        SCREENS
     ========================= */
-    function renderStart() {
+    function wireStartScreen() {
+      const hanisBtn = document.getElementById('hanisBtn');
+      const otherBtn = document.getElementById('otherBtn');
+      const hanisBox = document.getElementById('hanisBox');
+      const otherBox = document.getElementById('otherBox');
+      const classSel = document.getElementById('classSel');
+      const nameSel = document.getElementById('nameSel');
+      const otherClass = document.getElementById('otherClass');
+      const otherName = document.getElementById('otherName');
+      const startBtn = document.getElementById('startBtn');
+      const msgBox = document.getElementById('msgBox');
+      const howBtn = document.getElementById('howBtn');
+
+      if (!hanisBtn || !otherBtn || !startBtn || !msgBox) {
+        console.warn('Start screen wiring failed: missing elements');
+        return;
+      }
+
+      // reset state
       APP_STATE.class = null;
       APP_STATE.name = null;
       APP_STATE.locked = false;
-      APP_STATE.setNo = null;
+      updateRight();
+
+      function setReadyMessage() {
+        msgBox.innerHTML = `<div class="okbox">✅ Ready! After you start, your set is locked and you only have one attempt.</div>`;
+      }
+      function setLockedMessage(attempt) {
+        msgBox.innerHTML = `<div class="warn"><b>Locked.</b> You already submitted this quiz earlier.<br>Score recorded: <b>${attempt.score}/${attempt.total}</b> • Set: <b>${attempt.setNo ?? '—'}</b></div>`;
+      }
+
+      function checkLockAndToggleStart() {
+        const attempt = loadAttempt();
+        if (attempt?.submitted) {
+          APP_STATE.locked = true;
+          startBtn.disabled = true;
+          setLockedMessage(attempt);
+        } else {
+          APP_STATE.locked = false;
+          startBtn.disabled = !(APP_STATE.class && APP_STATE.name);
+          if (APP_STATE.class && APP_STATE.name) setReadyMessage();
+        }
+      }
+
+      hanisBtn.addEventListener('click', () => {
+        hanisBox.classList.remove('hide');
+        otherBox.classList.add('hide');
+        if (otherClass) otherClass.value = '';
+        if (otherName) otherName.value = '';
+        if (classSel) classSel.value = '';
+        if (nameSel) {
+          nameSel.disabled = true;
+          nameSel.innerHTML = `<option value="" selected disabled>Choose name…</option>`;
+        }
+        APP_STATE.class = null;
+        APP_STATE.name = null;
+        msgBox.innerHTML = '';
+        startBtn.disabled = true;
+        updateRight();
+      });
+
+      otherBtn.addEventListener('click', () => {
+        otherBox.classList.remove('hide');
+        hanisBox.classList.add('hide');
+        if (classSel) classSel.value = '';
+        if (nameSel) {
+          nameSel.disabled = true;
+          nameSel.innerHTML = `<option value="" selected disabled>Choose name…</option>`;
+        }
+        APP_STATE.class = null;
+        APP_STATE.name = null;
+        msgBox.innerHTML = '';
+        startBtn.disabled = true;
+        updateRight();
+      });
+
+      if (classSel && nameSel) {
+        classSel.addEventListener('change', () => {
+          APP_STATE.class = classSel.value;
+          nameSel.disabled = false;
+          nameSel.innerHTML = `<option value="" selected disabled>Choose name…</option>` +
+            (STUDENTS[APP_STATE.class] || []).map(n => `<option value="${escapeHtml(n)}">${escapeHtml(n)}</option>`).join('');
+          APP_STATE.name = null;
+          msgBox.innerHTML = '';
+          startBtn.disabled = true;
+          updateRight();
+        });
+
+        nameSel.addEventListener('change', () => {
+          APP_STATE.name = nameSel.value;
+          updateRight();
+          checkLockAndToggleStart();
+        });
+      }
+
+      function handleOtherTyping() {
+        const c = otherClass?.value?.trim();
+        const n = otherName?.value?.trim();
+        APP_STATE.class = c || null;
+        APP_STATE.name = n || null;
+        updateRight();
+        checkLockAndToggleStart();
+      }
+      otherClass?.addEventListener('input', handleOtherTyping);
+      otherName?.addEventListener('input', handleOtherTyping);
+
+      howBtn?.addEventListener('click', () => {
+        msgBox.innerHTML = `<div class="okbox"><b>How it works:</b><br>• You’ll get 20 questions.<br>• The system assigns you a random <b>Set 1–10</b>.<br>• Options are shuffled 😌<br>• Some are <b>Select TWO</b>.<br>• End page shows your score — screenshot it and send to class group.</div>`;
+      });
+
+      startBtn.addEventListener('click', () => {
+        // unlock audio on a real user interaction
+        ensureAudio();
+        playSfx(SFX.panic); // quick unlock
+        SFX.panic.pause();
+        SFX.panic.currentTime = 0;
+
+        startQuiz();
+      });
+    }
+
+    function renderStart() {
       APP_STATE.questions = [];
       APP_STATE.qIndex = 0;
       APP_STATE.answers = [];
@@ -1103,244 +1007,51 @@
       updateRight();
 
       transitionTo(`
-  <div class="qwrap">
-    <p class="kicker"><span class="pill">✨ Hello bestie</span></p>
-    <h2 class="qtitle">Before we start… choose your student type 👇</h2>
-    <p class="hint">⚠️ One attempt only. Don’t refresh when you’re answering.</p>
+    <div class="qwrap">
+      <p class="kicker"><span class="pill">✨ Hello bestie</span></p>
+      <h2 class="qtitle">Before we start… choose your student type 👇</h2>
+      <p class="hint">⚠️ One attempt only. Don’t refresh when you’re answering.</p>
 
-    <label>You are…</label>
-    <div class="footerRow">
-      <button class="ghost" id="hanisBtn" type="button">Miss Hanis students</button>
-      <button class="ghost" id="otherBtn" type="button">Other classes</button>
+      <label>You are…</label>
+      <div class="footerRow">
+        <button class="ghost" id="hanisBtn" type="button">Miss Hanis students</button>
+        <button class="ghost" id="otherBtn" type="button">Other classes</button>
+      </div>
+
+      <div id="hanisBox" class="swooshIn hide">
+        <label>Class</label>
+        <select id="classSel">
+          <option value="" selected disabled>Choose class…</option>
+          <option value="H11">H11</option>
+          <option value="H12">H12</option>
+          <option value="H02">H02</option>
+        </select>
+
+        <label>Name</label>
+        <select id="nameSel" disabled>
+          <option value="" selected disabled>Choose name…</option>
+        </select>
+      </div>
+
+      <div id="otherBox" class="swooshIn hide">
+        <label>Your class</label>
+        <input id="otherClass" placeholder="Example: H10 / T02 / H03" />
+
+        <label>Your name</label>
+        <input id="otherName" placeholder="Example: Aina Binti Ahmad" />
+        <p class="hint">Tip: Please type full name for record.</p>
+      </div>
+
+      <div class="footerRow">
+        <button class="ghost" id="howBtn" type="button">How it works</button>
+        <button id="startBtn" type="button" disabled>Start W12 Quiz</button>
+      </div>
+
+      <div id="msgBox"></div>
     </div>
+  `);
 
-    <!-- PATH A -->
-    <div id="hanisBox" class="swooshIn hide">
-      <label>Class</label>
-      <select id="classSel">
-        <option value="" selected disabled>Choose class…</option>
-        <option value="H11">H11</option>
-        <option value="H12">H12</option>
-        <option value="H02">H02</option>
-      </select>
-
-      <label>Name</label>
-      <select id="nameSel" disabled>
-        <option value="" selected disabled>Choose name…</option>
-      </select>
-    </div>
-
-    <!-- PATH B -->
-    <div id="otherBox" class="swooshIn hide">
-      <label>Your class</label>
-      <input id="otherClass" placeholder="Example: K10 / F2 / 5A / H03" />
-
-      <label>Your name</label>
-      <input id="otherName" placeholder="Example: Aina Binti Ahmad" />
-      <p class="hint">Tip: Please type full name for record.</p>
-    </div>
-
-    <div class="footerRow">
-      <button class="ghost" id="howBtn" type="button">How it works</button>
-      <button id="startBtn" type="button" disabled>Start W12 Quiz</button>
-    </div>
-
-    <div id="msgBox"></div>
-  </div>
-`);
-      // ✅ WIRING (must be AFTER transitionTo, because elements exist only after screen.innerHTML)
-      const hanisBtn = document.getElementById("hanisBtn");
-      const otherBtn = document.getElementById("otherBtn");
-      const hanisBox = document.getElementById("hanisBox");
-      const otherBox = document.getElementById("otherBox");
-
-      const classSel = document.getElementById("classSel");
-      const nameSel = document.getElementById("nameSel");
-
-      const otherClass = document.getElementById("otherClass");
-      const otherName = document.getElementById("otherName");
-
-      const startBtn = document.getElementById("startBtn");
-      const howBtn = document.getElementById("howBtn");
-      const msgBox = document.getElementById("msgBox");
-
-      // helpers
-      function show(el) { el?.classList.remove("hide"); }
-      function hide(el) { el?.classList.add("hide"); }
-
-      // reset (so start is always clean)
-      hide(hanisBox);
-      hide(otherBox);
-      startBtn.disabled = true;
-      msgBox.innerHTML = "";
-      APP_STATE.class = null;
-      APP_STATE.name = null;
-      updateRight();
-
-      // pick path A
-      hanisBtn.addEventListener("click", () => {
-        show(hanisBox);
-        hide(otherBox);
-        if (otherClass) otherClass.value = "";
-        if (otherName) otherName.value = "";
-        if (nameSel) nameSel.disabled = true;
-        startBtn.disabled = true;
-        msgBox.innerHTML = "";
-      });
-
-      // pick path B
-      otherBtn.addEventListener("click", () => {
-        show(otherBox);
-        hide(hanisBox);
-        if (classSel) classSel.value = "";
-        if (nameSel) {
-          nameSel.innerHTML = `<option value="" selected disabled>Choose name…</option>`;
-          nameSel.disabled = true;
-        }
-        startBtn.disabled = true;
-        msgBox.innerHTML = "";
-      });
-
-      // --- PATH A dropdown behavior
-      classSel.addEventListener("change", () => {
-        APP_STATE.class = classSel.value;
-        nameSel.disabled = false;
-        nameSel.innerHTML =
-          `<option value="" selected disabled>Choose name…</option>` +
-          STUDENTS[APP_STATE.class].map(n => `<option value="${escapeHtml(n)}">${escapeHtml(n)}</option>`).join("");
-
-        startBtn.disabled = true;
-        msgBox.innerHTML = "";
-        updateRight();
-      });
-
-      nameSel.addEventListener("change", () => {
-        APP_STATE.name = nameSel.value;
-        updateRight();
-
-        const attempt = loadAttempt();
-        if (attempt?.submitted) {
-          startBtn.disabled = true;
-          msgBox.innerHTML = `
-      <div class="warn">
-        <b>Locked.</b> You already submitted this quiz earlier.<br>
-        Score: <b>${attempt.score}/${attempt.total}</b> • Set: <b>${attempt.setNo}</b>
-      </div>`;
-        } else {
-          startBtn.disabled = false;
-          msgBox.innerHTML = `<div class="okbox">✅ Ready! One attempt only.</div>`;
-        }
-      });
-
-      // --- PATH B typing behavior
-      function checkOtherReady() {
-        const c = (otherClass?.value || "").trim();
-        const n = (otherName?.value || "").trim();
-
-        if (c.length >= 2 && n.length >= 2) {
-          APP_STATE.class = c;
-          APP_STATE.name = n;
-          updateRight();
-
-          const attempt = loadAttempt();
-          if (attempt?.submitted) {
-            startBtn.disabled = true;
-            msgBox.innerHTML = `
-        <div class="warn">
-          <b>Locked.</b> You already submitted this quiz earlier.<br>
-          Score: <b>${attempt.score}/${attempt.total}</b> • Set: <b>${attempt.setNo}</b>
-        </div>`;
-          } else {
-            startBtn.disabled = false;
-            msgBox.innerHTML = `<div class="okbox">✅ Ready! One attempt only.</div>`;
-          }
-        } else {
-          startBtn.disabled = true;
-        }
-      }
-      otherClass?.addEventListener("input", checkOtherReady);
-      otherName?.addEventListener("input", checkOtherReady);
-
-      // How button
-      howBtn.addEventListener("click", () => {
-        msgBox.innerHTML = `
-    <div class="okbox">
-      <b>How it works:</b><br>
-      • 20 questions<br>
-      • Random Set 1–10<br>
-      • Some Select TWO<br>
-      • Screenshot score at end
-    </div>`;
-      });
-
-      // Start button
-      startBtn.addEventListener("click", () => {
-        ensureAudio();
-        startQuiz();
-      });
-
-      setTimeout(() => {
-        const classSel = document.getElementById("classSel");
-        const nameSel = document.getElementById("nameSel");
-        const startBtn = document.getElementById("startBtn");
-        const howBtn = document.getElementById("howBtn");
-        const msgBox = document.getElementById("msgBox");
-
-        classSel.addEventListener("change", () => {
-          APP_STATE.class = classSel.value;
-          nameSel.disabled = false;
-          nameSel.innerHTML = `<option value="" selected disabled>Choose name…</option>` +
-            STUDENTS[APP_STATE.class].map(n => `<option value="${escapeHtml(n)}">${escapeHtml(n)}</option>`).join("");
-          startBtn.disabled = true;
-          msgBox.innerHTML = "";
-          updateRight();
-        });
-
-        nameSel.addEventListener("change", () => {
-          APP_STATE.name = nameSel.value;
-          updateRight();
-
-          const attempt = loadAttempt();
-          if (attempt?.submitted) {
-            APP_STATE.locked = true;
-            startBtn.disabled = true;
-            msgBox.innerHTML = `
-          <div class="warn">
-            <b>Locked.</b> You already submitted this quiz earlier.<br>
-            Score recorded: <b>${attempt.score}/${attempt.total}</b>
-          </div>
-        `;
-          } else {
-            APP_STATE.locked = false;
-            startBtn.disabled = false;
-            msgBox.innerHTML = `
-          <div class="okbox">✅ Ready! Once you start, this attempt is locked.</div>
-        `;
-          }
-        });
-
-        howBtn.addEventListener("click", () => {
-          msgBox.innerHTML = `
-        <div class="okbox">
-          <b>How it works:</b><br>
-          • You’ll get <b>20 questions</b>.<br>
-          • Some questions are <b>Select TWO</b>.<br>
-          • End page shows your score — <b>screenshot</b> and send to class group.
-        </div>
-      `;
-        });
-
-        startBtn.addEventListener("click", () => {
-          ensureAudio();     // old beep sounds
-          setupSfx();        // ✅ create Audio objects
-          // ✅ unlock mp3 sound with a real user click
-          playMp3(sfxPanic);
-          sfxPanic.pause();
-          sfxPanic.currentTime = 0;
-
-          startQuiz();
-        });
-      }, 170);
+      setTimeout(wireStartScreen, 170);
     }
 
     function startQuiz() {
@@ -1352,7 +1063,6 @@
 
       APP_STATE.setNo = setNo;
       APP_STATE.rnd = rnd;
-
       APP_STATE.questions = buildSet(setNo, rnd);
       APP_STATE.qIndex = 0;
       APP_STATE.answers = Array(APP_STATE.questions.length).fill(null);
@@ -1364,15 +1074,12 @@
         return;
       }
 
-      saveAttempt({ submitted: false, startedAt: Date.now(), total: APP_STATE.questions.length });
-
-      startTimer();   // ⏱ start countdown
+      saveAttempt({ submitted: false, startedAt: Date.now(), total: APP_STATE.questions.length, setNo });
       updateRight();
       renderQuestion();
     }
 
     function renderLocked(attempt) {
-      updateRight();
       transitionTo(`
     <div class="qwrap">
       <h2 class="qtitle">This attempt is locked 🔒</h2>
@@ -1389,17 +1096,16 @@
     </div>
   `);
     }
+
     function renderQuestion() {
-      APP_STATE.timerPanicPlayed = false;
       const q = APP_STATE.questions[APP_STATE.qIndex];
       updateRight();
-      APP_STATE.timerPanicPlayed = false;
-      startTimerPerQuestion();  // <<< PASTE THIS LINE HERE
+      startTimerPerQuestion();
 
-      const isMulti = q.type === "multi2";
+      const isMulti = q.type === 'multi2';
       const instr = q.instruction
         ? `<p class="hint"><b>${escapeHtml(q.instruction)}</b></p>`
-        : `<p class="hint">${isMulti ? "<b>Select TWO answers.</b>" : "Choose ONE answer."}</p>`;
+        : `<p class="hint">${isMulti ? '<b>Select TWO answers.</b>' : 'Choose ONE answer.'}</p>`;
 
       const selected = APP_STATE.answers[APP_STATE.qIndex] || [];
 
@@ -1407,33 +1113,32 @@
     <div class="qwrap">
       <div class="chips">
         <span class="chip">Question ${APP_STATE.qIndex + 1} / ${APP_STATE.questions.length}</span>
-        <span class="chip">${isMulti ? "Select TWO" : "Single answer"}</span>
+        <span class="chip">${isMulti ? 'Select TWO' : 'Single answer'}</span>
       </div>
       <h2 class="qtitle">${escapeHtml(q.stem)}</h2>
       ${instr}
       <div class="choices" id="choices"></div>
       <div class="footerRow">
-        <button class="ghost" id="backBtn" type="button" ${APP_STATE.qIndex === 0 ? "disabled" : ""}>Back</button>
-        <button id="nextBtn" type="button" disabled>${APP_STATE.qIndex === APP_STATE.questions.length - 1 ? "Submit" : "Next"}</button>
+        <button class="ghost" id="backBtn" type="button" ${APP_STATE.qIndex === 0 ? 'disabled' : ''}>Back</button>
+        <button id="nextBtn" type="button" disabled>${APP_STATE.qIndex === APP_STATE.questions.length - 1 ? 'Submit' : 'Next'}</button>
       </div>
       <div class="tiny">Choose carefully — one attempt only 👀</div>
     </div>
   `);
 
       setTimeout(() => {
-        const choicesEl = document.getElementById("choices");
-        const nextBtn = document.getElementById("nextBtn");
-        const backBtn = document.getElementById("backBtn");
+        const choicesEl = document.getElementById('choices');
+        const nextBtn = document.getElementById('nextBtn');
+        const backBtn = document.getElementById('backBtn');
 
         q.options.forEach((opt, idx) => {
           const letter = String.fromCharCode(65 + idx);
-          const div = document.createElement("div");
-          div.className = "choice" + (selected.includes(idx) ? " selected" : "");
+          const div = document.createElement('div');
+          div.className = 'choice' + (selected.includes(idx) ? ' selected' : '');
           div.innerHTML = `<div class="bubble">${letter}</div><div>${escapeHtml(opt.t)}</div>`;
 
-          div.addEventListener("click", () => {
-            let sel = APP_STATE.answers[APP_STATE.qIndex];
-            if (!sel) sel = [];
+          div.addEventListener('click', () => {
+            let sel = APP_STATE.answers[APP_STATE.qIndex] || [];
             sel = sel.slice();
 
             if (isMulti) {
@@ -1444,11 +1149,7 @@
             }
 
             APP_STATE.answers[APP_STATE.qIndex] = sel;
-
-            [...choicesEl.children].forEach((child, cIdx) => {
-              child.classList.toggle("selected", sel.includes(cIdx));
-            });
-
+            [...choicesEl.children].forEach((child, cIdx) => child.classList.toggle('selected', sel.includes(cIdx)));
             nextBtn.disabled = isMulti ? (sel.length !== 2) : (sel.length !== 1);
           });
 
@@ -1457,17 +1158,19 @@
 
         nextBtn.disabled = isMulti ? (selected.length !== 2) : (selected.length !== 1);
 
-        backBtn?.addEventListener("click", () => {
+        backBtn?.addEventListener('click', () => {
+          clearInterval(APP_STATE.timerIntervalId);
           APP_STATE.qIndex--;
           renderQuestion();
         });
 
         nextBtn.addEventListener("click", () => {
-          clearInterval(APP_STATE.timerIntervalId); // 👈 ADD THIS
+          clearInterval(APP_STATE.timerIntervalId);
+          stopSfx(SFX.panic); // 🔴 ADD THIS
           const correctIdx = q.options.map((o, i) => ({ o, i })).filter(x => x.o.correct).map(x => x.i);
           const sel = APP_STATE.answers[APP_STATE.qIndex] || [];
           const isCorrect = arraysEqual(sorted(sel), sorted(correctIdx));
-          playTone(isCorrect ? "ok" : "bad");
+          playTone(isCorrect ? 'ok' : 'bad');
 
           if (APP_STATE.qIndex < APP_STATE.questions.length - 1) {
             APP_STATE.qIndex++;
@@ -1480,6 +1183,8 @@
     }
 
     function submitQuiz() {
+      clearInterval(APP_STATE.timerIntervalId);
+
       let score = 0;
       APP_STATE.questions.forEach((q, qi) => {
         const sel = APP_STATE.answers[qi] || [];
@@ -1488,40 +1193,42 @@
       });
       APP_STATE.score = score;
 
-      saveAttempt({ submitted: true, submittedAt: Date.now(), score, total: APP_STATE.questions.length });
+      saveAttempt({ submitted: true, submittedAt: Date.now(), score, total: APP_STATE.questions.length, setNo: APP_STATE.setNo });
       renderFinal();
     }
 
     function burstConfetti() {
-      confetti.innerHTML = "";
-      const colors = ["#ff6f91", "#ff9671", "#ffd166", "#06d6a0", "#4cc9f0", "#f4a7c1"];
+      confetti.innerHTML = '';
+      const colors = ['#ff6f91', '#ff9671', '#ffd166', '#06d6a0', '#4cc9f0', '#f4a7c1'];
       const count = 90;
       for (let i = 0; i < count; i++) {
         const el = document.createElement('i');
-        const left = Math.random() * 100;
-        const delay = Math.random() * 0.3;
-        const dur = 1.3 + Math.random() * 0.9;
-        const w = 8 + Math.random() * 6;
-        const h = 10 + Math.random() * 10;
-        el.style.left = left + 'vw';
+        el.style.left = (Math.random() * 100) + 'vw';
         el.style.top = (-10 - Math.random() * 20) + 'px';
-        el.style.width = w + 'px';
-        el.style.height = h + 'px';
+        el.style.width = (8 + Math.random() * 6) + 'px';
+        el.style.height = (10 + Math.random() * 10) + 'px';
         el.style.background = colors[Math.floor(Math.random() * colors.length)];
-        el.style.animationDelay = delay + 's';
-        el.style.animationDuration = dur + 's';
+        el.style.animationDelay = (Math.random() * 0.3) + 's';
+        el.style.animationDuration = (1.3 + Math.random() * 0.9) + 's';
         confetti.appendChild(el);
       }
-      setTimeout(() => { confetti.innerHTML = ""; }, 2400);
+      setTimeout(() => { confetti.innerHTML = ''; }, 2400);
+    }
+
+    function scoreMessage(score, total) {
+      const pct = (score / total) * 100;
+      if (pct >= 90) return { title: 'Slayyyy 😭✨', subtitle: 'That was clean. Screenshot and send it to your class group.' };
+      if (pct >= 75) return { title: 'Nice work 💖', subtitle: 'Good job. Screenshot and send it to your class group.' };
+      if (pct >= 50) return { title: 'Okayyy we move 😌', subtitle: 'Not bad. Screenshot and send it to your class group.' };
+      return { title: 'It’s okay bestie 😭', subtitle: 'Try to review the topic after this. Screenshot and send it to your class group.' };
     }
 
     function renderFinal() {
       updateRight();
-      barFill.style.width = `100%`;
+      barFill.style.width = '100%';
       progressText.textContent = `${APP_STATE.questions.length} / ${APP_STATE.questions.length}`;
-      statusLabel.textContent = "Submitted";
+      statusLabel.textContent = 'Submitted';
 
-      // celebration
       burstConfetti();
       playFinishFanfare();
 
@@ -1546,9 +1253,7 @@
           <div class="spark"><b>Send to</b><br>Your class group chat 💬</div>
         </div>
 
-        <div class="okbox" style="margin-top:12px;">
-          📸 <b>Screenshot this result</b> and send to your class group.
-        </div>
+        <div class="okbox" style="margin-top:12px;">📸 <b>Screenshot this result</b> and send to your class group.</div>
       </div>
 
       <div class="footerRow">
@@ -1556,95 +1261,11 @@
         <button type="button" disabled>Submitted ✔</button>
       </div>
 
-      <div class="tiny">
-        If your score looks wrong, screenshot the question + your selection and tell Miss Hanisu.
-      </div>
+      <div class="tiny">If your score looks wrong, screenshot the question + your selection and tell Miss Hanisu.</div>
     </div>
   `);
     }
 
-    function scoreMessage(score, total) {
-      const pct = (score / total) * 100;
-      if (pct >= 90) return { title: "Slayyyy 😭✨", subtitle: "That was clean. Screenshot and send it to your class group." };
-      if (pct >= 75) return { title: "Nice work 💖", subtitle: "Good job. Screenshot and send it to your class group." };
-      if (pct >= 50) return { title: "Okayyy we move 😌", subtitle: "Not bad. Screenshot and send it to your class group." };
-      return { title: "It’s okay bestie 😭", subtitle: "Try to review the topic after this. Screenshot and send it to your class group." };
-    }
-
-    /* =========================
-       HELPERS
-    ========================= */
-    const TIMER_PER_QUESTION_SEC = 20; // 👈 ADD THIS
-
-    function startTimerPerQuestion() {
-      clearInterval(APP_STATE.timerIntervalId);
-
-      // reset panic sound flag for new question
-      APP_STATE.timerPanicPlayed = false;
-
-      APP_STATE.timerEndAt = Date.now() + TIMER_PER_QUESTION_SEC * 1000;
-
-      APP_STATE.timerIntervalId = setInterval(() => {
-        const remainingMs = Math.max(0, APP_STATE.timerEndAt - Date.now());
-        const sec = Math.ceil(remainingMs / 1000);
-
-        progressText.textContent =
-          `${APP_STATE.qIndex + 1} / ${APP_STATE.questions.length} • ⏱ ${sec}s`;
-
-        // 🚨 play panic sound once when 5s left
-        if (!APP_STATE.timerPanicPlayed && sec <= 5 && sec > 0) {
-          APP_STATE.timerPanicPlayed = true;
-          playSfx(SFX.panic);
-        }
-
-        // ⏰ time’s up
-        if (remainingMs <= 0) {
-          clearInterval(APP_STATE.timerIntervalId);
-          playSfx("gameover");
-
-          if (APP_STATE.qIndex < APP_STATE.questions.length - 1) {
-            APP_STATE.qIndex++;
-            renderQuestion();
-          } else {
-            submitQuiz();
-          }
-        }
-      }, 200);
-    }
-    function escapeHtml(s) {
-      return String(s)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
-    function sorted(a) { return a.slice().sort((x, y) => x - y); }
-    function arraysEqual(a, b) { if (a.length !== b.length) return false; for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return false; return true; }
-    /* =========================
-       TIMER
-    ========================= */
-    function startTimer() {
-      APP_STATE.timerEndAt = Date.now() + APP_STATE.timerTotalSec * 1000;
-
-      APP_STATE.timerIntervalId = setInterval(() => {
-        const now = Date.now();
-        const remaining = Math.max(0, APP_STATE.timerEndAt - now);
-
-        const sec = Math.floor(remaining / 1000);
-        const min = Math.floor(sec / 60);
-        const s = sec % 60;
-
-        // show timer in right panel progress text
-        progressText.textContent =
-          `${APP_STATE.qIndex + 1} / ${APP_STATE.questions.length} • ⏱ ${String(min).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-
-        if (remaining <= 0) {
-          clearInterval(APP_STATE.timerIntervalId);
-          submitQuiz(); // auto submit when time up ⏰
-        }
-      }, 1000);
-    }
     /* =========================
        BOOT
     ========================= */
