@@ -595,10 +595,60 @@
       }
     }
 
+    /* cute swoosh animation */
+    .swooshIn {
+      animation: swooshIn .35s cubic-bezier(.2, .9, .2, 1) both;
+    }
+
+    @keyframes swooshIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px) scale(.98);
+        filter: blur(2px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    .hide {
+      display: none !important;
+    }
+
     @media (max-width: 900px) {
       .app {
         grid-template-columns: 1fr;
       }
+    }
+
+    @media (max-width: 900px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* NEW: hide helper for swoosh boxes */
+    .hide {
+      display: none;
+    }
+
+    /* NEW: style for manual input fields */
+    input {
+      width: 100%;
+      border: none;
+      border-radius: 14px;
+      padding: 12px 12px;
+      font-size: 15px;
+      outline: none;
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .06);
+    }
+
+    input:focus {
+      box-shadow: var(--shadow), var(--focus);
     }
   </style>
 </head>
@@ -650,6 +700,38 @@
     /* =========================
        STUDENT LISTS
     ========================= */
+    // 🔊 MIXKIT SOUNDS (panic + timeout)
+    const SFX_PANIC = "blaring.mp3";
+    const SFX_TIMEOUT = "gameover.mp3";
+    // ✅ Preload & play helper for MP3 sfx (works on file:// too)
+    let sfxPanic = null;
+    let sfxTimeout = null;
+
+    function setupSfx() {
+      // create once
+      if (!sfxPanic) {
+        sfxPanic = new Audio(SFX_PANIC);
+        sfxPanic.preload = "auto";
+        sfxPanic.volume = 1.0;
+      }
+      if (!sfxTimeout) {
+        sfxTimeout = new Audio(SFX_TIMEOUT);
+        sfxTimeout.preload = "auto";
+        sfxTimeout.volume = 1.0;
+      }
+    }
+
+    function playMp3(audioObj) {
+      if (!audioObj) return;
+      try {
+        audioObj.pause();
+        audioObj.currentTime = 0;
+      } catch (e) { }
+      audioObj.play().catch(err => {
+        console.warn("Audio blocked / failed:", err);
+      });
+    }
+    // ✅ STUDENT LISTS
     const STUDENTS = {
       H11: [
         "ELDRINE HILIM",
@@ -832,10 +914,50 @@
     /* =========================
        SOUND
     ========================= */
+    // =========================
+    // MP3 SFX (Mixkit files)
+    // =========================
+    const SFX = {
+      panic: new Audio("blaring.mp3"),
+      gameover: new Audio("gameover.mp3"),
+    };
+
+    Object.values(SFX).forEach(a => {
+      a.preload = "auto";
+      a.volume = 0.9;
+    });
+
+    function playSfx(audio) {
+      try {
+        audio.pause();
+        audio.currentTime = 0;
+        audio.play();
+      } catch (e) { }
+    }
     let audioCtx = null;
     function ensureAudio() { if (!audioCtx) { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } }
 
     function playTone(type) {
+      // =========================
+      // MP3 SFX (Mixkit)
+      // =========================
+      const SFX = {
+        panic: new Audio("blaring.mp3"),     // 5s warning
+        gameover: new Audio("gameover.mp3"), // time's up
+      };
+
+      Object.values(SFX).forEach(a => {
+        a.preload = "auto";
+        a.volume = 0.9;
+      });
+
+      function playSfx(audio) {
+        try {
+          audio.pause();
+          audio.currentTime = 0;
+          audio.play();
+        } catch (e) { }
+      }
       ensureAudio();
       const t0 = audioCtx.currentTime;
       const o = audioCtx.createOscillator();
@@ -919,10 +1041,9 @@
       qIndex: 0,
       answers: [],
       score: 0,
+      timerPanicPlayed: false,
       // per-question timer only
       timerEndAt: null,
-      timerIntervalId: null,
-      timerEndAt: null,         // timestamp in ms
       timerIntervalId: null,
     };
 
@@ -943,6 +1064,11 @@
       studentLabel.textContent = (APP_STATE.class && APP_STATE.name) ? `${APP_STATE.class} • ${APP_STATE.name}` : "—";
       if (APP_STATE.questions.length) {
         progressText.textContent = `${APP_STATE.qIndex + 1} / ${APP_STATE.questions.length}`;
+        // 🔊 play panic sound at 5 seconds left
+        if (sec === 5 && !APP_STATE.timerPanicPlayed) {
+          APP_STATE.timerPanicPlayed = true;
+          playSfx("warning"); // your blaring.mp3
+        }
         barFill.style.width = `${((APP_STATE.qIndex) / APP_STATE.questions.length) * 100}%`;
         statusLabel.textContent = "In progress";
       } else {
@@ -977,40 +1103,181 @@
       updateRight();
 
       transitionTo(`
-    <div class="qwrap">
-      <div class="chips">
-        <span class="chip">✨ Cute UI</span>
-        <span class="chip">🔒 One attempt</span>
-        <span class="chip">🔊 Sounds</span>
-      </div>
-      <h2 class="qtitle">Before we start… choose your class & name 👇</h2>
-      <p class="hint">Please don’t refresh while answering (your attempt will lock).</p>
+  <div class="qwrap">
+    <p class="kicker"><span class="pill">✨ Hello bestie</span></p>
+    <h2 class="qtitle">Before we start… choose your student type 👇</h2>
+    <p class="hint">⚠️ One attempt only. Don’t refresh when you’re answering.</p>
 
+    <label>You are…</label>
+    <div class="footerRow">
+      <button class="ghost" id="hanisBtn" type="button">Miss Hanis students</button>
+      <button class="ghost" id="otherBtn" type="button">Other classes</button>
+    </div>
+
+    <!-- PATH A -->
+    <div id="hanisBox" class="swooshIn hide">
       <label>Class</label>
-      <div class="selectWrap">
-        <select id="classSel">
-          <option value="" selected disabled>Choose class…</option>
-          <option value="H11">H11</option>
-          <option value="H12">H12</option>
-          <option value="H02">H02</option>
-        </select>
-      </div>
+      <select id="classSel">
+        <option value="" selected disabled>Choose class…</option>
+        <option value="H11">H11</option>
+        <option value="H12">H12</option>
+        <option value="H02">H02</option>
+      </select>
 
       <label>Name</label>
-      <div class="selectWrap">
-        <select id="nameSel" disabled>
-          <option value="" selected disabled>Choose name…</option>
-        </select>
-      </div>
-
-      <div class="footerRow">
-        <button class="ghost" id="howBtn" type="button">How it works</button>
-        <button id="startBtn" type="button" disabled>Start W12 Quiz</button>
-      </div>
-
-      <div id="msgBox"></div>
+      <select id="nameSel" disabled>
+        <option value="" selected disabled>Choose name…</option>
+      </select>
     </div>
-  `);
+
+    <!-- PATH B -->
+    <div id="otherBox" class="swooshIn hide">
+      <label>Your class</label>
+      <input id="otherClass" placeholder="Example: K10 / F2 / 5A / H03" />
+
+      <label>Your name</label>
+      <input id="otherName" placeholder="Example: Aina Binti Ahmad" />
+      <p class="hint">Tip: Please type full name for record.</p>
+    </div>
+
+    <div class="footerRow">
+      <button class="ghost" id="howBtn" type="button">How it works</button>
+      <button id="startBtn" type="button" disabled>Start W12 Quiz</button>
+    </div>
+
+    <div id="msgBox"></div>
+  </div>
+`);
+      // ✅ WIRING (must be AFTER transitionTo, because elements exist only after screen.innerHTML)
+      const hanisBtn = document.getElementById("hanisBtn");
+      const otherBtn = document.getElementById("otherBtn");
+      const hanisBox = document.getElementById("hanisBox");
+      const otherBox = document.getElementById("otherBox");
+
+      const classSel = document.getElementById("classSel");
+      const nameSel = document.getElementById("nameSel");
+
+      const otherClass = document.getElementById("otherClass");
+      const otherName = document.getElementById("otherName");
+
+      const startBtn = document.getElementById("startBtn");
+      const howBtn = document.getElementById("howBtn");
+      const msgBox = document.getElementById("msgBox");
+
+      // helpers
+      function show(el) { el?.classList.remove("hide"); }
+      function hide(el) { el?.classList.add("hide"); }
+
+      // reset (so start is always clean)
+      hide(hanisBox);
+      hide(otherBox);
+      startBtn.disabled = true;
+      msgBox.innerHTML = "";
+      APP_STATE.class = null;
+      APP_STATE.name = null;
+      updateRight();
+
+      // pick path A
+      hanisBtn.addEventListener("click", () => {
+        show(hanisBox);
+        hide(otherBox);
+        if (otherClass) otherClass.value = "";
+        if (otherName) otherName.value = "";
+        if (nameSel) nameSel.disabled = true;
+        startBtn.disabled = true;
+        msgBox.innerHTML = "";
+      });
+
+      // pick path B
+      otherBtn.addEventListener("click", () => {
+        show(otherBox);
+        hide(hanisBox);
+        if (classSel) classSel.value = "";
+        if (nameSel) {
+          nameSel.innerHTML = `<option value="" selected disabled>Choose name…</option>`;
+          nameSel.disabled = true;
+        }
+        startBtn.disabled = true;
+        msgBox.innerHTML = "";
+      });
+
+      // --- PATH A dropdown behavior
+      classSel.addEventListener("change", () => {
+        APP_STATE.class = classSel.value;
+        nameSel.disabled = false;
+        nameSel.innerHTML =
+          `<option value="" selected disabled>Choose name…</option>` +
+          STUDENTS[APP_STATE.class].map(n => `<option value="${escapeHtml(n)}">${escapeHtml(n)}</option>`).join("");
+
+        startBtn.disabled = true;
+        msgBox.innerHTML = "";
+        updateRight();
+      });
+
+      nameSel.addEventListener("change", () => {
+        APP_STATE.name = nameSel.value;
+        updateRight();
+
+        const attempt = loadAttempt();
+        if (attempt?.submitted) {
+          startBtn.disabled = true;
+          msgBox.innerHTML = `
+      <div class="warn">
+        <b>Locked.</b> You already submitted this quiz earlier.<br>
+        Score: <b>${attempt.score}/${attempt.total}</b> • Set: <b>${attempt.setNo}</b>
+      </div>`;
+        } else {
+          startBtn.disabled = false;
+          msgBox.innerHTML = `<div class="okbox">✅ Ready! One attempt only.</div>`;
+        }
+      });
+
+      // --- PATH B typing behavior
+      function checkOtherReady() {
+        const c = (otherClass?.value || "").trim();
+        const n = (otherName?.value || "").trim();
+
+        if (c.length >= 2 && n.length >= 2) {
+          APP_STATE.class = c;
+          APP_STATE.name = n;
+          updateRight();
+
+          const attempt = loadAttempt();
+          if (attempt?.submitted) {
+            startBtn.disabled = true;
+            msgBox.innerHTML = `
+        <div class="warn">
+          <b>Locked.</b> You already submitted this quiz earlier.<br>
+          Score: <b>${attempt.score}/${attempt.total}</b> • Set: <b>${attempt.setNo}</b>
+        </div>`;
+          } else {
+            startBtn.disabled = false;
+            msgBox.innerHTML = `<div class="okbox">✅ Ready! One attempt only.</div>`;
+          }
+        } else {
+          startBtn.disabled = true;
+        }
+      }
+      otherClass?.addEventListener("input", checkOtherReady);
+      otherName?.addEventListener("input", checkOtherReady);
+
+      // How button
+      howBtn.addEventListener("click", () => {
+        msgBox.innerHTML = `
+    <div class="okbox">
+      <b>How it works:</b><br>
+      • 20 questions<br>
+      • Random Set 1–10<br>
+      • Some Select TWO<br>
+      • Screenshot score at end
+    </div>`;
+      });
+
+      // Start button
+      startBtn.addEventListener("click", () => {
+        ensureAudio();
+        startQuiz();
+      });
 
       setTimeout(() => {
         const classSel = document.getElementById("classSel");
@@ -1064,7 +1331,13 @@
         });
 
         startBtn.addEventListener("click", () => {
-          ensureAudio();
+          ensureAudio();     // old beep sounds
+          setupSfx();        // ✅ create Audio objects
+          // ✅ unlock mp3 sound with a real user click
+          playMp3(sfxPanic);
+          sfxPanic.pause();
+          sfxPanic.currentTime = 0;
+
           startQuiz();
         });
       }, 170);
@@ -1116,10 +1389,11 @@
     </div>
   `);
     }
-
     function renderQuestion() {
+      APP_STATE.timerPanicPlayed = false;
       const q = APP_STATE.questions[APP_STATE.qIndex];
       updateRight();
+      APP_STATE.timerPanicPlayed = false;
       startTimerPerQuestion();  // <<< PASTE THIS LINE HERE
 
       const isMulti = q.type === "multi2";
@@ -1305,6 +1579,9 @@
     function startTimerPerQuestion() {
       clearInterval(APP_STATE.timerIntervalId);
 
+      // reset panic sound flag for new question
+      APP_STATE.timerPanicPlayed = false;
+
       APP_STATE.timerEndAt = Date.now() + TIMER_PER_QUESTION_SEC * 1000;
 
       APP_STATE.timerIntervalId = setInterval(() => {
@@ -1314,8 +1591,16 @@
         progressText.textContent =
           `${APP_STATE.qIndex + 1} / ${APP_STATE.questions.length} • ⏱ ${sec}s`;
 
+        // 🚨 play panic sound once when 5s left
+        if (!APP_STATE.timerPanicPlayed && sec <= 5 && sec > 0) {
+          APP_STATE.timerPanicPlayed = true;
+          playSfx(SFX.panic);
+        }
+
+        // ⏰ time’s up
         if (remainingMs <= 0) {
           clearInterval(APP_STATE.timerIntervalId);
+          playSfx("gameover");
 
           if (APP_STATE.qIndex < APP_STATE.questions.length - 1) {
             APP_STATE.qIndex++;
